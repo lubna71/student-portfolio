@@ -14,7 +14,7 @@ header
 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: #fff;
     padding: 15px 30px;
@@ -30,6 +30,21 @@ nav a{
 }
 nav a:hover{
     color:#ffd700;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
 }
 section{
     padding:50px 30px;
@@ -100,6 +115,21 @@ section h2 {
     margin: 15px 0 8px;
     color: #1a1a2e;
 }
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffd700;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+.project-link:hover {
+    opacity: 0.85;
+}
 .single-image img {
     max-width: 100%;
     display: block;
@@ -157,18 +187,31 @@ form button:hover {
 /* Responsive */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     text-align: center;
- }
- nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
- }
-nav a {
-    margin-left: 0; 
 }
+.hamburger {
+    display: flex;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    text-align: right;
+    gap: 10px;
+    margin-top: 15px;
+    padding-right: 20px;
+}
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    margin-left: 0;
+    padding: 10px 0;
+  }
 }
 footer {
   text-align: center;

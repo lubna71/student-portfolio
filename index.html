@@ -9,7 +9,12 @@
         <body>
             <header>
             <h1>Lubna Qudrat</h1>
-            <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="navMenu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -48,6 +53,12 @@
                         <h3>Project 2</h3>
                         <p>A social media marketing post designed for a used car dealership, featuring promotional pricing, brand messaging, and call-to-action buttons for Facebook and Instagram.</p>
                     </div>
+                    <div class="project-card single-image">
+                        <img src="projects/project_3(music_app).png" alt="Shazam Frontend Demo">
+                        <h3>Project 3: Shazam - Music Recognition App</h3>
+                        <p>A music recognition web app built as a full stack internship task. It identifies a song from a short microphone recording by comparing it against a custom-built database of songs, without using any third-party recognition service. Every part of the recognition process (audio analysis, fingerprint generation, matching) was built from scratch.</p>
+                        <a href="https://github.com/lubna71/shazam-frontend" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
             </section>
             <section id="contact">
                 <h2>Contact me</h2>
@@ -65,5 +76,16 @@
             <footer>
             <p>&copy; 2026 My Portfolio. All rights reserved.</p>
 </footer>
-        </body>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById("navMenu");
+        nav.classList.toggle("active");
+    }
+    document.querySelectorAll("#navMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("navMenu").classList.remove("active");
+        });
+    });
+</script>
+</body>
 </html>
