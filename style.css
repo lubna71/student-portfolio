@@ -35,6 +35,8 @@ section{
     padding:50px 30px;
     max-width: 1000px;
     margin: auto;
+    scroll-margin-top: 100px;
+
 }
 section h2 {
     font-size: 2rem;
